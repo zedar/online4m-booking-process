@@ -1,0 +1,136 @@
+{
+  "@class": "pl.bpm4cloud.process.domain.ProcessDef",
+  "codeName": "SDContentPane_196",
+  "version": "1.0",
+  "modelCreationStrategy": "INIT",
+  "startNode": "CONFIRM_REQ",
+  "startRoles": "ROLE_ANONYMOUS, ROLE_USER",
+  "bb": {
+    "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
+    "x": 100,
+    "y": 100
+  },
+  "swimlanes": [
+    {
+      "@class": "pl.bpm4cloud.process.domain.SwimlaneDef",
+      "name": "user",
+      "roles": "ROLE_USER, ROLE_ANONYMOUS"
+    },
+    {
+      "@class": "pl.bpm4cloud.process.domain.SwimlaneDef",
+      "name": "bo",
+      "roles": "ROLE_BO"
+    }
+  ],
+  "nodes": [
+    {
+      "@class": "pl.bpm4cloud.process.domain.TaskNodeDef",
+      "name": "CONFIRM_OFFER",
+      "defaultForm": "BP_FORM",
+      "swimlane": "user",
+      "label": "Potwierdzenie oferty",
+      "bb": {
+        "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
+        "x": 437,
+        "y": 345
+      },
+      "transitions": [
+        {
+          "@class": "pl.bpm4cloud.process.domain.TransitionDef",
+          "name": "toSDEndState",
+          "to": "SDEndState"
+        }
+      ]
+    },
+    {
+      "@class": "pl.bpm4cloud.process.domain.TaskNodeDef",
+      "name": "VERIFY_REQ",
+      "defaultForm": "BP_FORM",
+      "swimlane": "bo",
+      "label": "Weryfikacja zgłoszenia",
+      "bb": {
+        "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
+        "x": 442,
+        "y": 78
+      },
+      "transitions": [
+        {
+          "@class": "pl.bpm4cloud.process.domain.TransitionDef",
+          "name": "toSEND_OFFER",
+          "to": "SEND_OFFER"
+        },
+        {
+          "@class": "pl.bpm4cloud.process.domain.TransitionDef",
+          "name": "toREJECT_REQUEST",
+          "to": "REJECT_REQUEST"
+        }
+      ]
+    },
+    {
+      "@class": "pl.bpm4cloud.process.domain.AutomaticNodeDef",
+      "name": "CONFIRM_REQ",
+      "swimlane": "user",
+      "label": "Potwierdzenie zgłoszenia",
+      "actionHandlerClass": "ConfirmRequestHandler",
+      "bb": {
+        "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
+        "x": 203,
+        "y": 112
+      },
+      "transitions": [
+        {
+          "@class": "pl.bpm4cloud.process.domain.TransitionDef",
+          "name": "toVERIFY_REQ",
+          "to": "VERIFY_REQ"
+        }
+      ]
+    },
+    {
+      "@class": "pl.bpm4cloud.process.domain.AutomaticNodeDef",
+      "name": "SEND_OFFER",
+      "swimlane": "user",
+      "label": "Wysłanie oferty",
+      "actionHandlerClass": "SendOfferHandler",
+      "bb": {
+        "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
+        "x": 446,
+        "y": 210
+      },
+      "transitions": [
+        {
+          "@class": "pl.bpm4cloud.process.domain.TransitionDef",
+          "name": "toCONFIRM_OFFER",
+          "to": "CONFIRM_OFFER"
+        }
+      ]
+    },
+    {
+      "@class": "pl.bpm4cloud.process.domain.AutomaticNodeDef",
+      "name": "REJECT_REQUEST",
+      "swimlane": "user",
+      "label": "Odrzucenie zgłoszenia",
+      "actionHandlerClass": "RejectRequestHandler",
+      "bb": {
+        "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
+        "x": 598,
+        "y": 221
+      },
+      "transitions": [
+        {
+          "@class": "pl.bpm4cloud.process.domain.TransitionDef",
+          "name": "toSDEndState",
+          "to": "SDEndState"
+        }
+      ]
+    },
+    {
+      "@class": "pl.bpm4cloud.process.domain.EndNodeDef",
+      "name": "SDEndState",
+      "bb": {
+        "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
+        "x": 794.9850810769686,
+        "y": 364.46875
+      }
+    }
+  ]
+}

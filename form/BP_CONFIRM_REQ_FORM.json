@@ -1,0 +1,56 @@
+{
+  "@class": "pl.bpm4cloud.gui.definition.GuiDefWrapper",
+  "BP_CONFIRM_REQ_FORM": {
+    "controlType": "form",
+    "@class": "pl.bpm4cloud.gui.component.def.FormDef",
+    "id": "GDForm_26",
+    "codeName": "BP_CONFIRM_REQ_FORM",
+    "cssClass": "form-horizontal",
+    "modelCodeName": "BP_CONFIRM_REQ_FORM",
+    "modelStrategy": "init",
+    "prevModelCodeName": "BP_CONFIRM_REQ_FORM",
+    "children": {
+      "BP_CR_FIELDSET": {
+        "controlType": "tbfieldset",
+        "@class": "pl.bpm4cloud.gui.component.def.FieldSetDef",
+        "id": "GDTBFieldset_33",
+        "codeName": "BP_CR_FIELDSET",
+        "modelCodeName": "BP_CR_FIELDSET",
+        "modelStrategy": "init",
+        "prevModelCodeName": "BP_CR_FIELDSET",
+        "children": {
+          "BP_CR_TITLE": {
+            "controlType": "tbtypographybox",
+            "@class": "pl.bpm4cloud.gui.component.def.HeadingDef",
+            "id": "GDTBTypographyBox_48",
+            "codeName": "BP_CR_TITLE",
+            "cssClass": "",
+            "paragraphCssClass": "",
+            "heading": true,
+            "strength": 2,
+            "paragraph": "",
+            "text": "Dziekujemy za przesłanie zgłoszenia",
+            "modelCodeName": "BP_CR_TITLE",
+            "modelStrategy": "init",
+            "prevModelCodeName": "BP_CR_TITLE"
+          },
+          "BP_CR_DESCR": {
+            "controlType": "tbtypographybox",
+            "@class": "pl.bpm4cloud.gui.component.def.ParagraphDef",
+            "id": "GDTBTypographyBox_59",
+            "codeName": "BP_CR_DESCR",
+            "cssClass": "",
+            "paragraphCssClass": "lead",
+            "heading": "",
+            "strength": 1,
+            "paragraph": true,
+            "text": "Za chwilę otrzymasz email potwierdzający przyjęcie zgłoszenia. Już w tym momencie zajmujemy się przygotowaniem odpowiedzi dla Ciebie.",
+            "modelCodeName": "BP_CR_DESCR",
+            "modelStrategy": "init",
+            "prevModelCodeName": "BP_CR_DESCR"
+          }
+        }
+      }
+    }
+  }
+}
