@@ -24,7 +24,7 @@ Open form definition editor by selecting *New/Form Design* in toolbar under *Nav
 
 In the dialog *GUI serialized to JSON* replace json string with the content of file:
 
-  form/BP_FORM.json file.
+    form/BP_FORM.json file.
 
 Save form by selecting *Save Form Design* from the toolbar under *Navigation* panel.
 
@@ -35,7 +35,7 @@ Again, select *New/Form Design* option from the toolbar under *Navigation* panel
 
 In the dialog *GUI serialization to JSON* replace json string with the content of file:
 
-  form/BP_CONFIRM_REQ_FORM.json
+    form/BP_CONFIRM_REQ_FORM.json
 
 Save form by selecting *Save Form Design* from the toolbar under *Navigation* panel.
 
@@ -49,7 +49,7 @@ Open process definition designer by selecting *New/Process Design* in toolbar un
 
 In the dialog *Process serialized to JSON* replace json string with the content of file:
 
-  process/BP_PROCESS.json
+    process/BP_PROCESS.json
 
 Save process by selecting *Save Process Design* from the toolbar under *Navigation* panel. 
 
@@ -61,7 +61,7 @@ In the dialog *Save Process Design* select project name (as was created in *Step
 Open code editor by selecting *New/Control Rule File* in toolbar under *Navigation* panel.  
 Copy and paste source code into the editor from the file:
 
-  ruleset/gui/BP_FORMRuleset.groovy
+    ruleset/gui/BP_FORMRuleset.groovy
 
 Save ruleset by selecting *Save Control Ruleset* from the toolbar under *Navigation* panel. 
 
@@ -71,7 +71,7 @@ In the dialog *Save Control Ruleset* select project name (as was create in *Step
 
 Repeat steps from *Step 6* but copy and paste the content of the
 
-  ruleset/process/BP_PROCESSRuleset.groovy
+    ruleset/process/BP_PROCESSRuleset.groovy
 
 Use **BP_PROCESSRuleset** as file name.
 
