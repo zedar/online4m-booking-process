@@ -1,9 +1,9 @@
 # Booking Process source code for online4m platform
 
-[online4m](http://online4m.com) provides process driven online forms. 
+[online4m](https://www.online4m.com) is a service for design and execution of process driven online forms. 
 Fast, simple and pragmatic business process development.
 
-This repository contains source code for [*How to build process driven form, so that the customer can quickly and simply send the request and receive an answer.*](http://blog.online4m.com/articles/online4m-reservation-process/).
+This repository contains source code for [*How to build process driven form, so that the customer can quickly and simply send the request and receive an answer.*](http://www.online4m.com/blog/articles/online4m-booking-process/).
 
 ## Installation procedure
 

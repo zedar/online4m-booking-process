@@ -4,7 +4,7 @@ import pl.bpm4cloud.handler.InputHandler
 import pl.bpm4cloud.handler.OnClickHandler
 
 import groovy.time.*
-
+  
 class BP_FIELDSETHandler extends InputHandler {
   void onInit() {
     boolean newReq = !processStep
@@ -23,13 +23,12 @@ class BP_EMAILHandler extends InputHandler {
     if (val) {
       def emailPattern = /[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})/
       if (!(val ==~ emailPattern)) {
-        self.setRequiredValidation("Niepoprawny format adresu email")
+        self.setRequiredValidation("Wrong email format")
       }
     }
     else {
-      self.setRequiredValidation("Email jest wymagany") 
-    }
-    
+      self.setRequiredValidation("Email is required") 
+    }    
   }
 }
 
@@ -60,7 +59,7 @@ class BP_DATEHandler extends InputHandler {
       self.setReadOnly(false)  
     }
   }
-  
+
   void onValidate() {
     String val = self.getValue()
     if (val) {
@@ -83,7 +82,6 @@ class BP_HOURHandler extends InputHandler {
   void onInit() {
     String val = model?.getValue("ModelBP_FORM.BP_HOUR")
     if (val) {
-      //self.setValue(val.getAt(0..1) + ":" + val.getAt(2..3)) 
       self.setValue(val)
     }
     else {
@@ -117,7 +115,7 @@ class BP_SENDHandler extends OnClickHandler {
       self.setVisible(false) 
     }
   }
-  
+
   void onAction() {
     if (guiScriptService.validateSection("BP_FORM")) {
       if (!processStep) {
@@ -141,7 +139,7 @@ class BP_SEND_OFFERHandler extends OnClickHandler {
       self.setVisible(false) 
     }
   }
-  
+
   void onAction() {
     println("BP_RESPONSE ${BP_RESPONSE.getValue()}")
     model.setValue("ModelBP_FORM.BP_RESPONSE", BP_RESPONSE.getValue())
@@ -149,7 +147,7 @@ class BP_SEND_OFFERHandler extends OnClickHandler {
   }
 }
 
-class BP_REJECT_OFFERHandler extends OnClickHandler {
+class BP_REJECT_REQUESTHandler extends OnClickHandler {
   void onInit() {
     if (processStep == "VERIFY_REQ") {
       self.setVisible(true) 
@@ -158,9 +156,10 @@ class BP_REJECT_OFFERHandler extends OnClickHandler {
       self.setVisible(false) 
     }
   }
-  
+
   void onAction() {
     model.setValue("ModelBP_FORM.BP_RESPONSE", BP_RESPONSE.getValue())
     processScriptService.executeTask("toREJECT_REQUEST")
   }
 }
+

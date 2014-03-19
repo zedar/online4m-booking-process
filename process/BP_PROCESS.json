@@ -1,6 +1,6 @@
 {
   "@class": "pl.bpm4cloud.process.domain.ProcessDef",
-  "codeName": "SDContentPane_196",
+  "codeName": "SDContentPane_52",
   "version": "1.0",
   "modelCreationStrategy": "INIT",
   "startNode": "CONFIRM_REQ",
@@ -13,26 +13,63 @@
   "swimlanes": [
     {
       "@class": "pl.bpm4cloud.process.domain.SwimlaneDef",
-      "name": "user",
-      "roles": "ROLE_USER, ROLE_ANONYMOUS"
+      "name": "bo",
+      "roles": "ROLE_BO"
     },
     {
       "@class": "pl.bpm4cloud.process.domain.SwimlaneDef",
-      "name": "bo",
-      "roles": "ROLE_BO"
+      "name": "user",
+      "roles": "ROLE_USER, ROLE_ANONYMOUS"
     }
   ],
   "nodes": [
+    {
+      "@class": "pl.bpm4cloud.process.domain.AutomaticNodeDef",
+      "name": "CONFIRM_REQ",
+      "swimlane": "user",
+      "label": "Confirm request",
+      "actionHandlerClass": "ConfirmRequestHandler",
+      "bb": {
+        "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
+        "x": 215,
+        "y": 91
+      },
+      "transitions": [
+        {
+          "@class": "pl.bpm4cloud.process.domain.TransitionDef",
+          "name": "toVERIFY_REQ",
+          "to": "VERIFY_REQ"
+        }
+      ]
+    },
     {
       "@class": "pl.bpm4cloud.process.domain.TaskNodeDef",
       "name": "CONFIRM_OFFER",
       "defaultForm": "BP_FORM",
       "swimlane": "user",
-      "label": "Potwierdzenie oferty",
+      "label": "Confirm offer",
       "bb": {
         "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
-        "x": 437,
-        "y": 345
+        "x": 393,
+        "y": 285
+      },
+      "transitions": [
+        {
+          "@class": "pl.bpm4cloud.process.domain.TransitionDef",
+          "name": "toSDEndState",
+          "to": "SDEndState"
+        }
+      ]
+    },
+    {
+      "@class": "pl.bpm4cloud.process.domain.AutomaticNodeDef",
+      "name": "REJECT_REQ",
+      "swimlane": "user",
+      "label": "Reject request",
+      "bb": {
+        "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
+        "x": 522,
+        "y": 152
       },
       "transitions": [
         {
@@ -47,41 +84,22 @@
       "name": "VERIFY_REQ",
       "defaultForm": "BP_FORM",
       "swimlane": "bo",
-      "label": "Weryfikacja zgłoszenia",
+      "label": "Verify request",
       "bb": {
         "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
-        "x": 442,
-        "y": 78
+        "x": 378,
+        "y": 98
       },
       "transitions": [
+        {
+          "@class": "pl.bpm4cloud.process.domain.TransitionDef",
+          "name": "toREJECT_REQ",
+          "to": "REJECT_REQ"
+        },
         {
           "@class": "pl.bpm4cloud.process.domain.TransitionDef",
           "name": "toSEND_OFFER",
           "to": "SEND_OFFER"
-        },
-        {
-          "@class": "pl.bpm4cloud.process.domain.TransitionDef",
-          "name": "toREJECT_REQUEST",
-          "to": "REJECT_REQUEST"
-        }
-      ]
-    },
-    {
-      "@class": "pl.bpm4cloud.process.domain.AutomaticNodeDef",
-      "name": "CONFIRM_REQ",
-      "swimlane": "user",
-      "label": "Potwierdzenie zgłoszenia",
-      "actionHandlerClass": "ConfirmRequestHandler",
-      "bb": {
-        "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
-        "x": 203,
-        "y": 112
-      },
-      "transitions": [
-        {
-          "@class": "pl.bpm4cloud.process.domain.TransitionDef",
-          "name": "toVERIFY_REQ",
-          "to": "VERIFY_REQ"
         }
       ]
     },
@@ -89,12 +107,12 @@
       "@class": "pl.bpm4cloud.process.domain.AutomaticNodeDef",
       "name": "SEND_OFFER",
       "swimlane": "user",
-      "label": "Wysłanie oferty",
+      "label": "Send offer",
       "actionHandlerClass": "SendOfferHandler",
       "bb": {
         "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
-        "x": 446,
-        "y": 210
+        "x": 390,
+        "y": 192
       },
       "transitions": [
         {
@@ -105,31 +123,12 @@
       ]
     },
     {
-      "@class": "pl.bpm4cloud.process.domain.AutomaticNodeDef",
-      "name": "REJECT_REQUEST",
-      "swimlane": "user",
-      "label": "Odrzucenie zgłoszenia",
-      "actionHandlerClass": "RejectRequestHandler",
-      "bb": {
-        "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
-        "x": 598,
-        "y": 221
-      },
-      "transitions": [
-        {
-          "@class": "pl.bpm4cloud.process.domain.TransitionDef",
-          "name": "toSDEndState",
-          "to": "SDEndState"
-        }
-      ]
-    },
-    {
       "@class": "pl.bpm4cloud.process.domain.EndNodeDef",
       "name": "SDEndState",
       "bb": {
         "@class": "pl.bpm4cloud.process.domain.CoordinatesDef",
-        "x": 794.9850810769686,
-        "y": 364.46875
+        "x": 742.9850810769686,
+        "y": 246.46875
       }
     }
   ]

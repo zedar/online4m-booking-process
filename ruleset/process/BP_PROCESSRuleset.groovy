@@ -15,7 +15,7 @@ class ConfirmRequestHandler extends ProcessScriptHandler {
       </html>
       """)  
     }
-    
+
     return "toVERIFY_REQ"
   }
 }

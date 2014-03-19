@@ -3,51 +3,51 @@
   "BP_CONFIRM_REQ_FORM": {
     "controlType": "form",
     "@class": "pl.bpm4cloud.gui.component.def.FormDef",
-    "id": "GDForm_26",
+    "id": "GDForm_22",
     "codeName": "BP_CONFIRM_REQ_FORM",
     "cssClass": "form-horizontal",
-    "modelCodeName": "BP_CONFIRM_REQ_FORM",
+    "modelCodeName": "GDForm_22",
     "modelStrategy": "init",
-    "prevModelCodeName": "BP_CONFIRM_REQ_FORM",
+    "prevModelCodeName": "GDForm_22",
     "children": {
       "BP_CR_FIELDSET": {
         "controlType": "tbfieldset",
         "@class": "pl.bpm4cloud.gui.component.def.FieldSetDef",
-        "id": "GDTBFieldset_33",
+        "id": "GDTBFieldset_29",
         "codeName": "BP_CR_FIELDSET",
-        "modelCodeName": "BP_CR_FIELDSET",
+        "modelCodeName": "GDTBFieldset_29",
         "modelStrategy": "init",
-        "prevModelCodeName": "BP_CR_FIELDSET",
+        "prevModelCodeName": "GDTBFieldset_29",
         "children": {
           "BP_CR_TITLE": {
             "controlType": "tbtypographybox",
             "@class": "pl.bpm4cloud.gui.component.def.HeadingDef",
-            "id": "GDTBTypographyBox_48",
+            "id": "GDTBTypographyBox_34",
             "codeName": "BP_CR_TITLE",
             "cssClass": "",
             "paragraphCssClass": "",
             "heading": true,
-            "strength": 2,
+            "strength": "2",
             "paragraph": "",
-            "text": "Dziekujemy za przesłanie zgłoszenia",
-            "modelCodeName": "BP_CR_TITLE",
+            "text": "Thank you for sending the booking request",
+            "modelCodeName": "GDTBTypographyBox_34",
             "modelStrategy": "init",
-            "prevModelCodeName": "BP_CR_TITLE"
+            "prevModelCodeName": "GDTBTypographyBox_34"
           },
           "BP_CR_DESCR": {
             "controlType": "tbtypographybox",
             "@class": "pl.bpm4cloud.gui.component.def.ParagraphDef",
-            "id": "GDTBTypographyBox_59",
+            "id": "GDTBTypographyBox_45",
             "codeName": "BP_CR_DESCR",
             "cssClass": "",
             "paragraphCssClass": "lead",
             "heading": "",
-            "strength": 1,
+            "strength": "1",
             "paragraph": true,
-            "text": "Za chwilę otrzymasz email potwierdzający przyjęcie zgłoszenia. Już w tym momencie zajmujemy się przygotowaniem odpowiedzi dla Ciebie.",
-            "modelCodeName": "BP_CR_DESCR",
+            "text": "In a moment you receive an confirmation email. At this point we are working very hard to prepare response for you.",
+            "modelCodeName": "GDTBTypographyBox_45",
             "modelStrategy": "init",
-            "prevModelCodeName": "BP_CR_DESCR"
+            "prevModelCodeName": "GDTBTypographyBox_45"
           }
         }
       }
